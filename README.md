@@ -23,7 +23,9 @@ Instructions for environment setup and running your code and tests
 
 **Requires python3.10 and pip with poetry to follow the steps below**
 
-- In your python environment or virtual environment, run `poetry install`
+- In your python environment or virtual environment (make sure to call `source venv/bin/activate` to activate the venv.
+  Also install virtualenv using pip if you require to do so), make sure python 3.10+ is installed and active
+- Run `poetry install`
 - Run `cp .env.example .env` to set up .env for setting env variables
 - Run `bash launch.sh` to start the server. Alternatively, you can run the commands in the script individually.
   A default user is generated with username and password as test_user and password respectively. This is found in the
@@ -77,4 +79,4 @@ Assumptions made on the solution are listed below:
 - Standardize the response structure of the JSON returned by the service. A status and message field can help determine
   if the service was successfully completed
 - Improve the logging with file logging and use of production ready services such as Sentry
-The list is not exhaustive and many improvements can be made to the project
+  The list is not exhaustive and many improvements can be made to the project
