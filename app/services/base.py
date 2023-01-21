@@ -1,10 +1,9 @@
 import json
 from typing import Callable
 
-import httpx
-
 from app.core.config import logger
 from app.schemas.internal import StoredData
+from scraper import collectors
 from scraper.headers import get_xe_headers
 from utils import get_root_dir
 
@@ -35,12 +34,9 @@ class BaseService:
     async def retrieve_values_from_provider(cls, parser: Callable) -> StoredData | None:
         logger.info("Retrieving data from provider")
         try:
-            client = httpx.Client(timeout=httpx.Timeout(20.0), )
-            response = client.get(cls.scrape_url, headers=get_xe_headers(source=cls.headers_source))
-
-            if response.status_code == 200:
-                body = json.loads(response.content)
-                parsed_data = parser(body)
+            response = collectors.get_data(cls.scrape_url, headers=get_xe_headers(source=cls.headers_source))
+            if response is not None:
+                parsed_data = parser(response)
                 if parsed_data:
                     await cls.save_values_to_file(parsed_data)
                 return StoredData(**parsed_data)
