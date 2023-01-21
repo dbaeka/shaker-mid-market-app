@@ -1,0 +1,7 @@
+.mypy_cache
+.coverage
+htmlcov
+.idea
+.env
+/.coverage
+.pytest_cache
