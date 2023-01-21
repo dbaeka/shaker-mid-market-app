@@ -80,3 +80,4 @@ Assumptions made on the solution are listed below:
   if the service was successfully completed
 - Improve the logging with file logging and use of production ready services such as Sentry
   The list is not exhaustive and many improvements can be made to the project
+- Use Docker to manage deployment for easier management of different environments
