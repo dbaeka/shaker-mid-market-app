@@ -13,7 +13,7 @@ success and 400 HTTP status code on content errors
 **GET `/api/v1/rates/history`** Get the list of past conversions. Returns 200 HTTP status code on success and 400 HTTP
 status code on content errors
 
-**GET `/api/v1/user/me`** Returns information about the user with the current access token
+**GET `/api/v1/users/me`** Returns information about the user with the current access token
 
 More documentation can be found on [http://127.0.0.1:8000/docs]()
 
