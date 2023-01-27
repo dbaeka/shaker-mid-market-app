@@ -11,7 +11,7 @@ def currency_slug_to_name(slug: str) -> str:
 class CurrenciesService(BaseService):
     file_path = get_root_dir().joinpath("storage/app/currencies.json")
     headers_source = "currencies"
-    scrape_url = "https://www.xe.com/_next/data/tpDyqw5GKxU1cQXLD7Xmd/en/currency.json"
+    scrape_url = "https://www.xe.com/_next/data/zXvi01CWf5uhNGPHQuwm0/en/currency.json"
 
     @classmethod
     async def get_list(cls) -> dict[str, str] | None:
